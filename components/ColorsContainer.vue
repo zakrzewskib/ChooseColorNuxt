@@ -13,8 +13,8 @@ export default {
 <style scoped>
 .colors-container {
   display: grid;
-  grid-template-columns: 32rem 32rem;
-  grid-template-rows: 32rem 32rem;
+  grid-template-columns: 24rem 24rem;
+  grid-template-rows: 24rem 24rem;
 
   border: 2px solid #000;
 }
