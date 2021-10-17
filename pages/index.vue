@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <HeaderContainer />
+    <HeaderContainer title="Choose correct color:" :colorToSelect="colors[0]" />
     <ColorsContainer :colors="colors" />
   </div>
 </template>
@@ -9,7 +9,7 @@
 export default {
   data() {
     return {
-      colors: ["#123456", "#aabbcc", "#ffaacc", "#ffffff"]
+      colors: [Math.random(), "#aabbcc", "#ffaacc", "#ffffff"]
     };
   }
 };

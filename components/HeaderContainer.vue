@@ -1,6 +1,12 @@
 <template>
-  <h1>Choose correct color: #123456</h1>
+  <h1>{{ title }} {{ colorToSelect }}</h1>
 </template>
+
+<script>
+export default {
+  props: ["title", "colorToSelect"]
+};
+</script>
 
 <style scoped>
 h1 {

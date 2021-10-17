@@ -1,10 +1,15 @@
 <template>
-  <div :style="boxColor" class="color-box"></div>
+  <div @click="chooseColor" :style="boxColor" class="color-box"></div>
 </template>
 
 <script>
 export default {
   props: ["color"],
+  methods: {
+    chooseColor() {
+      console.log(this.color);
+    }
+  },
   computed: {
     boxColor() {
       return {
@@ -19,5 +24,7 @@ export default {
 .color-box {
   width: 100%;
   height: 100%;
+
+  cursor: pointer;
 }
 </style>
