@@ -9,8 +9,29 @@
 export default {
   data() {
     return {
-      colors: [Math.random(), "#aabbcc", "#ffaacc", "#ffffff"]
+      loaded: false,
+      colors: [
+        this.generateColor(),
+        this.generateColor(),
+        this.generateColor(),
+        this.generateColor()
+      ]
     };
+  },
+
+  methods: {
+    generateColor() {
+      let result = "#";
+      // https://github.com/prettier/prettier-vscode/issues/352
+      // prettier-ignore
+      let hexadecimalNumbers = new Array(0,1,2,3,4,5,6,7,8,9,"a","b","c","d","e","f");
+
+      for (let i = 0; i < 6; i++) {
+        let number = hexadecimalNumbers[Math.floor(Math.random() * (15 + 1))];
+        result += number;
+      }
+      return result;
+    }
   }
 };
 </script>
