@@ -13,12 +13,13 @@ export default {
   data() {
     return {
       loaded: false,
-      colors: [
+      randomColors: [
         this.generateColor(),
         this.generateColor(),
         this.generateColor(),
         this.generateColor()
-      ]
+      ],
+      colors: []
     };
   },
 
@@ -26,6 +27,13 @@ export default {
     colorToSelect() {
       return this.getRandomItemFromArray(this.colors);
     }
+  },
+
+  created() {
+    // this funcionality should be called also when going to next color guessing
+    this.colors = [...this.randomColors];
+    console.log("created");
+    // When going back to home page from about created is called - a problem?
   },
 
   methods: {
@@ -41,6 +49,7 @@ export default {
       }
       return result;
     },
+
     getRandomItemFromArray(array) {
       return array[Math.floor(Math.random() * array.length)];
     }
