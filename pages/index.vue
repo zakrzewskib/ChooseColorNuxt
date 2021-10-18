@@ -40,12 +40,6 @@ export default {
     }
   },
 
-  created() {
-    // this funcionality should be called also when going to next color guessing
-    this.defineNewColorsToChoose();
-    // When going back to home page from about created is called - a problem?
-  },
-
   methods: {
     generateColor() {
       let result = "#";
