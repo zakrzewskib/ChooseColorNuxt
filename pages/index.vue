@@ -4,7 +4,16 @@
       title="Choose correct color:"
       :colorToSelect="colorToSelect"
     />
-    <ColorsContainer :colors="colors" :colorToSelect="colorToSelect" />
+
+    <div v-if="correctColor">
+      <h1>GG ✌</h1>
+    </div>
+
+    <ColorsContainer
+      :colors="colors"
+      :colorToSelect="colorToSelect"
+      @selected-color="selectedColor"
+    />
   </div>
 </template>
 
@@ -19,7 +28,9 @@ export default {
         this.generateColor(),
         this.generateColor()
       ],
-      colors: []
+      colors: [],
+
+      correctColor: false
     };
   },
 
@@ -31,15 +42,13 @@ export default {
 
   created() {
     // this funcionality should be called also when going to next color guessing
-    this.colors = [...this.randomColors];
-    console.log("created");
+    this.defineNewColorsToChoose();
     // When going back to home page from about created is called - a problem?
   },
 
   methods: {
     generateColor() {
       let result = "#";
-      // https://github.com/prettier/prettier-vscode/issues/352
       // prettier-ignore
       let hexadecimalNumbers = new Array(0,1,2,3,4,5,6,7,8,9,"a","b","c","d","e","f");
 
@@ -52,6 +61,18 @@ export default {
 
     getRandomItemFromArray(array) {
       return array[Math.floor(Math.random() * array.length)];
+    },
+
+    defineNewColorsToChoose() {
+      this.colors = [...this.randomColors];
+      this.color = this.getRandomItemFromArray(this.colors);
+    },
+
+    selectedColor(color) {
+      console.log("Again from parent: ", color);
+      if (this.colorToSelect === color) {
+        this.correctColor = true;
+      }
     }
   }
 };
