@@ -4,7 +4,7 @@
       title="Choose correct color:"
       :colorToSelect="colorToSelect"
     />
-    <ColorsContainer :colors="colors" />
+    <ColorsContainer :colors="colors" :colorToSelect="colorToSelect" />
   </div>
 </template>
 

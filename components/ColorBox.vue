@@ -10,6 +10,7 @@ export default {
   methods: {
     chooseColor() {
       console.log(this.color);
+      this.$emit("selected-color", this.color);
     }
   },
   computed: {
