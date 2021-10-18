@@ -16,6 +16,8 @@ export default {
 </script>
 
 <style>
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+
 * {
   padding: 0;
   margin: 0;
@@ -24,6 +26,17 @@ export default {
 
 html {
   font-size: 65%;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  color: #212529;
+}
+
+h1 {
+  font-size: 3.6rem;
 }
 
 .container {

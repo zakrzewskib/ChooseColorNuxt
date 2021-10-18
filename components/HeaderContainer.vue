@@ -8,8 +8,4 @@ export default {
 };
 </script>
 
-<style scoped>
-h1 {
-  font-size: 3.6rem;
-}
-</style>
+<style scoped></style>
