@@ -10,6 +10,6 @@ export default {
 
 <style scoped>
 h1 {
-  font-size: 5.2rem;
+  font-size: 3.6rem;
 }
 </style>

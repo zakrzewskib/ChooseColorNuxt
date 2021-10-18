@@ -1,5 +1,7 @@
 <template>
-  <div @click="chooseColor" :style="boxColor" class="color-box"></div>
+  <div @click="chooseColor" :style="boxColor" class="color-box">
+    {{ color }}
+  </div>
 </template>
 
 <script>
@@ -22,8 +24,7 @@ export default {
 
 <style scoped>
 .color-box {
-  width: 100%;
-  height: 100%;
+  aspect-ratio: 1;
 
   cursor: pointer;
 }

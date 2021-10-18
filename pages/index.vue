@@ -24,15 +24,15 @@ export default {
 
 html {
   font-size: 65%;
-  overflow-x: hidden;
 }
 
 .container {
-  width: 90%;
-  margin: 9.6rem auto;
   display: flex;
   flex-direction: column;
+
   align-items: center;
+  justify-content: center;
+
   gap: 3.2rem;
 }
 </style>
