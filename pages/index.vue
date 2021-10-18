@@ -1,6 +1,9 @@
 <template>
   <div class="container">
-    <HeaderContainer title="Choose correct color:" :colorToSelect="colors[0]" />
+    <HeaderContainer
+      title="Choose correct color:"
+      :colorToSelect="colorToSelect"
+    />
     <ColorsContainer :colors="colors" />
   </div>
 </template>
@@ -19,6 +22,12 @@ export default {
     };
   },
 
+  computed: {
+    colorToSelect() {
+      return this.getRandomItemFromArray(this.colors);
+    }
+  },
+
   methods: {
     generateColor() {
       let result = "#";
@@ -31,6 +40,9 @@ export default {
         result += number;
       }
       return result;
+    },
+    getRandomItemFromArray(array) {
+      return array[Math.floor(Math.random() * array.length)];
     }
   }
 };
