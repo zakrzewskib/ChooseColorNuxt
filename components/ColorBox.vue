@@ -1,7 +1,5 @@
 <template>
-  <div @click="chooseColor" :style="boxColor" class="color-box">
-    {{ color }}
-  </div>
+  <div @click="chooseColor" :style="boxColor" class="color-box"></div>
 </template>
 
 <script>

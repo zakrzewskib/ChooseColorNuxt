@@ -7,6 +7,7 @@
 
     <div v-if="correctColor">
       <h1>GG ✌</h1>
+      <button @click="nextGuess">Next Guess</button>
     </div>
 
     <ColorsContainer
@@ -22,13 +23,12 @@ export default {
   data() {
     return {
       loaded: false,
-      randomColors: [
+      colors: [
         this.generateColor(),
         this.generateColor(),
         this.generateColor(),
         this.generateColor()
       ],
-      colors: [],
 
       correctColor: false
     };
@@ -64,7 +64,12 @@ export default {
     },
 
     defineNewColorsToChoose() {
-      this.colors = [...this.randomColors];
+      this.colors = [
+        this.generateColor(),
+        this.generateColor(),
+        this.generateColor(),
+        this.generateColor()
+      ];
       this.color = this.getRandomItemFromArray(this.colors);
     },
 
@@ -73,6 +78,10 @@ export default {
       if (this.colorToSelect === color) {
         this.correctColor = true;
       }
+    },
+    nextGuess() {
+      this.defineNewColorsToChoose();
+      this.correctColor = false;
     }
   }
 };
