@@ -2,12 +2,12 @@ export default {
     // https://nuxtjs.org/deployments/github-pages/
     target: "static",
     router: {
-        base: "/ChooseColorNuxt/"
+        base: "/ChooseNuxtColor/"
     },
 
     // Global page headers: https://go.nuxtjs.dev/config-head
     head: {
-        title: "ChooseColorNuxt",
+        title: "ChooseNuxtColor",
         htmlAttrs: {
             lang: "en"
         },
@@ -17,7 +17,11 @@ export default {
             { hid: "description", name: "description", content: "" },
             { name: "format-detection", content: "telephone=no" }
         ],
-        link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
+        link: [{
+            rel: "icon",
+            type: "image/x-icon",
+            href: "https://raw.githubusercontent.com/zakrzewskib/ChooseNuxtColor/master/static/favicon.ico"
+        }]
     },
 
     // Global CSS: https://go.nuxtjs.dev/config-css
