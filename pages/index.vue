@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container" v-if="mounted">
     <HeaderContainer
       title="Choose correct color:"
       :colorToSelect="colorToSelect"
@@ -23,15 +23,16 @@ export default {
   data() {
     return {
       loaded: false,
-      colors: [
-        this.generateColor(),
-        this.generateColor(),
-        this.generateColor(),
-        this.generateColor()
-      ],
+      colors: [],
 
-      correctColor: false
+      correctColor: false,
+      mounted: false
     };
+  },
+
+  mounted() {
+    this.defineNewColorsToChoose();
+    this.mounted = true;
   },
 
   computed: {
