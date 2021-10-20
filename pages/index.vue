@@ -5,10 +5,7 @@
       :colorToSelect="colorToSelect"
     />
 
-    <div v-if="correctColor" class="winning-message">
-      <h1>GJ ✌</h1>
-      <button @click="nextGuess">Next Guess</button>
-    </div>
+    <CorrectGuess :correctColor="correctColor" @next-guess="nextGuess" />
 
     <ColorsContainer
       :colors="colors"
@@ -114,26 +111,5 @@ h1 {
   justify-content: center;
 
   gap: 3.2rem;
-}
-
-.winning-message {
-  display: flex;
-  gap: 0.8rem;
-  align-items: center;
-}
-
-.winning-message button {
-  padding: 1.2rem 2.4rem;
-  font-weight: 500;
-  font-family: inherit;
-  font-size: 2.4rem;
-  color: #212529;
-  background-color: #862e9c;
-
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #9c36b5;
 }
 </style>
