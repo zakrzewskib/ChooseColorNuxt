@@ -36,6 +36,7 @@ export default {
       correctColor: false,
       mounted: false,
       streak: 0,
+      clickedNextGuess: true,
       about: false,
       home: true
     };
@@ -80,16 +81,20 @@ export default {
     },
 
     selectedColor(color) {
-      if (this.colorToSelect === color) {
-        this.correctColor = true;
-        this.streak++;
-      } else {
-        this.streak = 0;
+      if (this.clickedNextGuess) {
+        if (this.colorToSelect === color) {
+          this.correctColor = true;
+          this.streak++;
+          this.clickedNextGuess = false;
+        } else {
+          this.streak = 0;
+        }
       }
     },
     nextGuess() {
       this.defineNewColorsToChoose();
       this.correctColor = false;
+      this.clickedNextGuess = true;
     },
 
     changeToAbout() {
