@@ -1,19 +1,28 @@
 <template>
-  <div class="container" v-if="mounted">
-    <Nav />
-    <HeaderContainer
-      title="Choose correct color:"
-      :colorToSelect="colorToSelect"
+  <div>
+    <About
+      v-if="about"
+      @change-to-about="changeToAbout"
+      @change-to-home="changeToHome"
     />
 
-    <CorrectGuess :correctColor="correctColor" @next-guess="nextGuess" />
-    <GuessStreak :streak="streak" />
+    <div class="container" v-if="mounted && home == true">
+      <Nav @about-clicked="changeToAbout" @home-clicked="changeToHome" />
 
-    <ColorsContainer
-      :colors="colors"
-      :colorToSelect="colorToSelect"
-      @selected-color="selectedColor"
-    />
+      <HeaderContainer
+        title="Choose correct color:"
+        :colorToSelect="colorToSelect"
+      />
+
+      <CorrectGuess :correctColor="correctColor" @next-guess="nextGuess" />
+      <GuessStreak :streak="streak" />
+
+      <ColorsContainer
+        :colors="colors"
+        :colorToSelect="colorToSelect"
+        @selected-color="selectedColor"
+      />
+    </div>
   </div>
 </template>
 
@@ -26,7 +35,9 @@ export default {
 
       correctColor: false,
       mounted: false,
-      streak: 0
+      streak: 0,
+      about: false,
+      home: true
     };
   },
 
@@ -79,6 +90,16 @@ export default {
     nextGuess() {
       this.defineNewColorsToChoose();
       this.correctColor = false;
+    },
+
+    changeToAbout() {
+      this.about = true;
+      this.home = false;
+    },
+
+    changeToHome() {
+      this.about = false;
+      this.home = true;
     }
   }
 };

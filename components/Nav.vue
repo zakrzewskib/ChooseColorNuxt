@@ -1,18 +1,52 @@
 <template>
   <div class="navbar">
-    <NuxtLink class="my-nuxt-link" to="/">Home</NuxtLink>
-    <NuxtLink class="my-nuxt-link" to="/about">About</NuxtLink>
+    <p
+      class="my-nuxt-link"
+      to="/"
+      :class="{ active: activeHome }"
+      @click="homeClicked"
+    >
+      Home
+    </p>
+    <p
+      class="my-nuxt-link"
+      to="/about"
+      :class="{ active: activeAbout }"
+      @click="aboutClicked"
+    >
+      About
+    </p>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      activeHome: true,
+      activeAbout: false
+    };
+  },
+
+  methods: {
+    homeClicked() {
+      this.activeHome = true;
+      this.activeAbout = false;
+
+      this.$emit("home-clicked");
+    },
+    aboutClicked() {
+      this.activeAbout = true;
+      this.activeHome = false;
+
+      this.$emit("about-clicked");
+    }
+  }
+};
 </script>
 
 <style scoped>
 .navbar {
-  font-size: 2.4rem;
-
   display: flex;
   gap: 1.6rem;
   justify-content: center;
@@ -22,10 +56,15 @@ export default {};
 }
 
 .my-nuxt-link {
+  text-decoration: underline;
+
+  font-size: 2.4rem;
   color: inherit;
+
+  cursor: pointer;
 }
 
-.nuxt-link-exact-active {
+.active {
   color: #862e9c;
 }
 </style>
