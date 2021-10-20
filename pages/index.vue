@@ -1,5 +1,8 @@
 <template>
   <div>
+    <DarkMode />
+    <Nav @about-clicked="changeToAbout" @home-clicked="changeToHome" />
+
     <About
       v-if="about"
       @change-to-about="changeToAbout"
@@ -7,8 +10,6 @@
     />
 
     <div class="container" v-if="mounted && home == true">
-      <Nav @about-clicked="changeToAbout" @home-clicked="changeToHome" />
-
       <HeaderContainer
         title="Choose correct color:"
         :colorToSelect="colorToSelect"
@@ -132,10 +133,10 @@ body {
   color: #212529;
 }
 
-body.dark-mode {
+/* body.dark-mode {
   background-color: #000;
   color: #fff;
-}
+} */
 
 h1 {
   font-size: 3.6rem;

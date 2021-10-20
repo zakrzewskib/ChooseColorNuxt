@@ -33,11 +33,15 @@ export default {
       this.activeHome = true;
       this.activeAbout = false;
 
+      console.log("home");
+
       this.$emit("home-clicked");
     },
     aboutClicked() {
       this.activeAbout = true;
       this.activeHome = false;
+
+      console.log("about");
 
       this.$emit("about-clicked");
     }
@@ -52,7 +56,7 @@ export default {
   justify-content: center;
 
   margin-top: 0.8rem;
-  /* margin-bottom: 2.4rem; */
+  margin-bottom: 2.4rem;
 }
 
 .my-nuxt-link {
