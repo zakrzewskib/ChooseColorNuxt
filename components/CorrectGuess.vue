@@ -37,8 +37,4 @@ button {
 
   cursor: pointer;
 }
-
-p {
-  font-size: 2.4rem;
-}
 </style>

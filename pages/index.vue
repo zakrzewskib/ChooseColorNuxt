@@ -6,6 +6,7 @@
     />
 
     <CorrectGuess :correctColor="correctColor" @next-guess="nextGuess" />
+    <GuessStreak :streak="streak" />
 
     <ColorsContainer
       :colors="colors"
@@ -23,7 +24,8 @@ export default {
       colors: [],
 
       correctColor: false,
-      mounted: false
+      mounted: false,
+      streak: 0
     };
   },
 
@@ -66,7 +68,6 @@ export default {
     },
 
     selectedColor(color) {
-      console.log("Again from parent: ", color);
       if (this.colorToSelect === color) {
         this.correctColor = true;
       }
@@ -101,6 +102,10 @@ body {
 
 h1 {
   font-size: 3.6rem;
+}
+
+p {
+  font-size: 2.4rem;
 }
 
 .container {
