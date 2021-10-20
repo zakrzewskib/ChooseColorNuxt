@@ -14,7 +14,6 @@ export default {
   props: ["colors", "colorToSelect"],
   methods: {
     selectedColor(color) {
-      console.log("Color from parent", color);
       this.$emit("selected-color", color);
     }
   }

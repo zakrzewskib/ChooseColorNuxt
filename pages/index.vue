@@ -70,6 +70,9 @@ export default {
     selectedColor(color) {
       if (this.colorToSelect === color) {
         this.correctColor = true;
+        this.streak++;
+      } else {
+        this.streak = 0;
       }
     },
     nextGuess() {
