@@ -1,6 +1,5 @@
 <template>
   <div>
-    <DarkMode />
     <Nav @about-clicked="changeToAbout" @home-clicked="changeToHome" />
 
     <About
@@ -16,6 +15,8 @@
       />
 
       <CorrectGuess :correctColor="correctColor" @next-guess="nextGuess" />
+
+      <DarkMode />
       <GuessStreak :streak="streak" />
 
       <ColorsContainer
