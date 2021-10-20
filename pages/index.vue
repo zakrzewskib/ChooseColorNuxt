@@ -45,6 +45,8 @@ export default {
   mounted() {
     this.defineNewColorsToChoose();
     this.mounted = true;
+
+    document.body.classList.add("dark-mode");
   },
 
   computed: {
@@ -130,6 +132,11 @@ body {
   color: #212529;
 }
 
+body.dark-mode {
+  background-color: #000;
+  color: #fff;
+}
+
 h1 {
   font-size: 3.6rem;
 }
@@ -145,6 +152,6 @@ p {
   align-items: center;
   justify-content: center;
 
-  gap: 3.2rem;
+  gap: 2.4rem;
 }
 </style>

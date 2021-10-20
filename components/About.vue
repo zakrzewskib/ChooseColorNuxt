@@ -23,4 +23,8 @@ export default {
 .about {
   text-align: center;
 }
+
+.about h1 {
+  margin-top: 2.4rem;
+}
 </style>
