@@ -26,8 +26,6 @@ export default {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
-
-  border: 2px solid #000;
 }
 
 /* 1 em = 16px */

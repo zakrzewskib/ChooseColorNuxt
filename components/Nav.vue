@@ -52,7 +52,7 @@ export default {
   justify-content: center;
 
   margin-top: 0.8rem;
-  margin-bottom: 2.4rem;
+  /* margin-bottom: 2.4rem; */
 }
 
 .my-nuxt-link {
