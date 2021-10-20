@@ -29,6 +29,14 @@
 
 <script>
 export default {
+  head() {
+    return {
+      bodyAttrs: {
+        class: "dark-mode"
+      }
+    };
+  },
+
   data() {
     return {
       loaded: false,
@@ -46,8 +54,6 @@ export default {
   mounted() {
     this.defineNewColorsToChoose();
     this.mounted = true;
-
-    document.body.classList.add("dark-mode");
   },
 
   computed: {
@@ -133,10 +139,10 @@ body {
   color: #212529;
 }
 
-/* body.dark-mode {
+body.dark-mode {
   background-color: #000;
   color: #fff;
-} */
+}
 
 h1 {
   font-size: 3.6rem;

@@ -1,5 +1,5 @@
 <template>
-  <button @click="toggleDarkMode">Toggle dark mode</button>
+  <button @click="toggleDarkMode">Dark Mode</button>
 </template>
 
 <script>
