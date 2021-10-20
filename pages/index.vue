@@ -1,5 +1,6 @@
 <template>
   <div class="container" v-if="mounted">
+    <Nav />
     <HeaderContainer
       title="Choose correct color:"
       :colorToSelect="colorToSelect"
