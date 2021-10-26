@@ -4,8 +4,12 @@
     <button @click="nextGuess">Next Guess</button>
   </div>
 
-  <div v-else-if="guessesWrong" class="message">
-    <p>You guessed wrong!</p>
+  <div v-else-if="guessedWrong" class="message message-wrong">
+    <p>
+      You guessed wrong! -
+      <span :style="{ color: guessedColor }">{{ guessedColor }}</span>
+    </p>
+    <!-- <p>This color is {{ guessedColor }}</p> -->
   </div>
 
   <div v-else class="message">
@@ -15,10 +19,11 @@
 
 <script>
 export default {
-  props: ["correctColor", "guessedWrong"],
+  props: ["correctColor", "guessedWrong", "guessedColor"],
   methods: {
     nextGuess() {
       this.$emit("next-guess");
+      console.log(this.guessedColor);
     }
   }
 };
@@ -31,6 +36,9 @@ export default {
   display: flex
   gap: 0.8rem
   align-items: center
+
+.message-wrong
+  flex-direction: column
 
 
 button

@@ -5,7 +5,12 @@
       :colorToSelect="colorToSelect"
     />
 
-    <Guess :correctColor="correctColor" @next-guess="nextGuess" />
+    <Guess
+      :correctColor="correctColor"
+      :guessedWrong="guessedWrong"
+      :guessedColor="guessedColor"
+      @next-guess="nextGuess"
+    />
 
     <DarkMode />
     <GuessStreak :streak="streak" />
@@ -26,7 +31,9 @@ export default {
 
       correctColor: false,
       streak: 0,
-      clickedNextGuess: true
+      clickedNextGuess: true,
+      guessedColor: "",
+      guessedWrong: false
     };
   },
 
@@ -68,6 +75,8 @@ export default {
     },
 
     selectedColor(color) {
+      this.guessedWrong = true;
+      this.guessedColor = color;
       if (this.clickedNextGuess) {
         if (this.colorToSelect === color) {
           this.correctColor = true;
@@ -76,13 +85,13 @@ export default {
         } else {
           this.streak = 0;
         }
-      } else {
       }
     },
     nextGuess() {
       this.defineNewColorsToChoose();
       this.correctColor = false;
       this.clickedNextGuess = true;
+      this.guessedWrong = false;
     }
   }
 };
