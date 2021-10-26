@@ -16,25 +16,26 @@ export default {
 };
 </script>
 
-<style scoped>
-.winning-message {
-  display: flex;
-  gap: 0.8rem;
-  align-items: center;
-}
+<style scoped lang="sass">
+@import '~/assets/variables.scss'
 
-button {
-  background: none !important;
-  border: none;
-  padding: 0 !important;
+.winning-message
+  display: flex
+  gap: 0.8rem
+  align-items: center
 
-  font-weight: 500;
-  font-family: inherit;
-  text-decoration: underline;
 
-  font-size: 2.4rem;
-  color: #862e9c;
+button
+  background: none !important
+  border: none
+  padding: 0 !important
 
-  cursor: pointer;
-}
+  font-weight: 500
+  font-family: inherit
+  text-decoration: underline
+
+  font-size: 2.4rem
+  color: $link-color
+
+  cursor: pointer
 </style>

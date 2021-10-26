@@ -49,26 +49,27 @@ export default {
 };
 </script>
 
-<style scoped>
-.navbar {
-  display: flex;
-  gap: 1.6rem;
-  justify-content: center;
+<style scoped lang="sass">
+@import '~/assets/variables.scss'
 
-  margin-top: 0.8rem;
-  margin-bottom: 2.4rem;
-}
+.navbar
+  display: flex
+  gap: 1.6rem
+  justify-content: center
 
-.my-nuxt-link {
-  text-decoration: underline;
+  margin-top: 0.8rem
+  margin-bottom: 2.4rem
 
-  font-size: 2.4rem;
-  color: inherit;
 
-  cursor: pointer;
-}
+.my-nuxt-link
+  text-decoration: underline
 
-.active {
-  color: #862e9c;
-}
+  font-size: 2.4rem
+  color: inherit
+
+  cursor: pointer
+
+
+.active
+  color: $link-color
 </style>
