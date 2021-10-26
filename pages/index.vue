@@ -8,7 +8,7 @@
       @change-to-home="changeToHome"
     />
 
-    <GameContainer class="container" v-if="mounted && home == true" />
+    <GameContainer v-if="mounted && home == true" />
   </div>
 </template>
 
@@ -69,18 +69,9 @@ body.dark-mode
   background-color: #000
   color: #fff
 
-h1
-  font-size: 3.6rem
-
 p
   font-size: 2.4rem
 
-.container
-  display: flex
-  flex-direction: column
-
-  align-items: center
-  justify-content: center
-
-  gap: 2.4rem
+h1
+  font-size: 3.6rem
 </style>

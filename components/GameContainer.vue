@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <HeaderContainer
       title="Choose correct color:"
       :colorToSelect="colorToSelect"
@@ -88,4 +88,14 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="sass" scoped>
+
+.container
+  display: flex
+  flex-direction: column
+
+  align-items: center
+  justify-content: center
+
+  gap: 2.4rem
+</style>

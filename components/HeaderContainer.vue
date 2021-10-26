@@ -1,7 +1,9 @@
 <template>
-  <h1>
-    <span>{{ title }}</span> <span>{{ colorToSelect }}</span>
-  </h1>
+  <header>
+    <h1>
+      <span>{{ title }}</span> <span>{{ colorToSelect }}</span>
+    </h1>
+  </header>
 </template>
 
 <script>
@@ -22,8 +24,8 @@ export default {
 
 /* 500px */
 @media (max-width: 32em) {
-  /* h1 {
-    font-size: 75%;
-  } */
+  h1 {
+    font-size: 3.2rem;
+  }
 }
 </style>

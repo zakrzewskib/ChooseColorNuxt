@@ -1,5 +1,5 @@
 <template>
-  <div class="navbar">
+  <nav class="navbar">
     <p
       class="my-nuxt-link"
       to="/"
@@ -16,7 +16,7 @@
     >
       About
     </p>
-  </div>
+  </nav>
 </template>
 
 <script>
