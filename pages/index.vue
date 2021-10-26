@@ -123,43 +123,36 @@ export default {
 <style lang="sass">
 // @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
 
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
+*
+  padding: 0
+  margin: 0
+  box-sizing: border-box
 
-html {
-  font-size: 65%;
-}
+html
+  font-size: 65%
 
-body {
-  font-family: "Roboto", sans-serif;
-  line-height: 1;
-  font-weight: 400;
-  color: #212529;
-}
+body
+  font-family: "Roboto", sans-serif
+  line-height: 1
+  font-weight: 400
+  color: #212529
 
-body.dark-mode {
-  background-color: #000;
-  color: #fff;
-}
+body.dark-mode
+  background-color: #000
+  color: #fff
 
-h1 {
-  font-size: 3.6rem;
-}
+h1
+  font-size: 3.6rem
 
-p {
-  font-size: 2.4rem;
-}
+p
+  font-size: 2.4rem
 
-.container {
-  display: flex;
-  flex-direction: column;
+.container
+  display: flex
+  flex-direction: column
 
-  align-items: center;
-  justify-content: center;
+  align-items: center
+  justify-content: center
 
-  gap: 2.4rem;
-}
+  gap: 2.4rem
 </style>
