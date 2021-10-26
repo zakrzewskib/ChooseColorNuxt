@@ -1,6 +1,6 @@
 <template>
   <div class="your-guesses">
-    <h1>User guesses:</h1>
+    <h1>You guessed:</h1>
 
     <p v-if="guessesArray.length === 0">No guesses yet!</p>
 

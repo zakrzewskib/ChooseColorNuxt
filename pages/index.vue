@@ -30,7 +30,7 @@ export default {
   mounted() {
     if (localStorage.getItem("guesses")) {
       try {
-        this.cats = JSON.parse(localStorage.getItem("guesses"));
+        this.guesses = JSON.parse(localStorage.getItem("guesses"));
       } catch (e) {
         localStorage.removeItem("guesses");
       }
