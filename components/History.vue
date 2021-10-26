@@ -1,6 +1,9 @@
 <template>
   <div class="your-guesses">
-    <h1>User guesses</h1>
+    <h1>User guesses:</h1>
+
+    <p v-if="guessesArray.length === 0">No guesses yet!</p>
+
     <ul class="history-list">
       <li v-for="guess in guessesArray" :key="guess">
         <p :style="{ color: guess }">{{ guess }}</p>
@@ -25,6 +28,10 @@ export default {
 
 h1 {
   margin-bottom: 2.4rem;
+}
+
+ul {
+  list-style: none;
 }
 
 .history-list {
