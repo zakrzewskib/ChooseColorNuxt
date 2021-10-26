@@ -3,7 +3,7 @@
     <h1>User guesses</h1>
     <ul class="history-list">
       <li v-for="guess in guessesArray" :key="guess">
-        <p>{{ guess }}</p>
+        <p :style="{ color: guess }">{{ guess }}</p>
       </li>
     </ul>
   </div>

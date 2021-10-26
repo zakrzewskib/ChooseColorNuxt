@@ -2,7 +2,7 @@
   <div>
     <Nav @first-clicked="changeToHome" @second-clicked="changeToHistory" />
 
-    <History v-if="history" :guessesArray="skills" />
+    <History v-if="history" :guessesArray="guesses" />
 
     <GameContainer
       v-if="mounted && home == true"
@@ -27,7 +27,7 @@ export default {
       history: false,
       home: true,
 
-      skills: [1, 2, 3, 4]
+      guesses: []
     };
   },
 
@@ -47,7 +47,7 @@ export default {
     },
 
     updateGuesses(color) {
-      console.log(color);
+      this.guesses.push(color);
     }
   }
 };
