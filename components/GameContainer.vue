@@ -86,14 +86,15 @@ export default {
           this.correctColor = true;
           this.streak++;
           this.clickedNextGuess = false;
+
+          this.$emit("guessed-correctly", this.colorToSelect);
         } else {
           this.streak = 0;
         }
       }
     },
-    nextGuess() {
-      this.$emit("guessed-correctly", this.colorToSelect);
 
+    nextGuess() {
       this.defineNewColorsToChoose();
       this.correctColor = false;
       this.clickedNextGuess = true;
