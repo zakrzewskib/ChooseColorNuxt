@@ -1,13 +1,21 @@
 <template>
-  <div v-if="correctColor" class="winning-message">
+  <div v-if="correctColor" class="message">
     <p>GJ ✌</p>
     <button @click="nextGuess">Next Guess</button>
+  </div>
+
+  <div v-else-if="guessesWrong" class="message">
+    <p>You guessed wrong!</p>
+  </div>
+
+  <div v-else class="message">
+    <p>Waiting for your guess...</p>
   </div>
 </template>
 
 <script>
 export default {
-  props: ["correctColor"],
+  props: ["correctColor", "guessedWrong"],
   methods: {
     nextGuess() {
       this.$emit("next-guess");
@@ -19,7 +27,7 @@ export default {
 <style scoped lang="sass">
 @import '~/assets/variables.scss'
 
-.winning-message
+.message
   display: flex
   gap: 0.8rem
   align-items: center

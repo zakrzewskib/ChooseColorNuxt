@@ -5,7 +5,7 @@
       :colorToSelect="colorToSelect"
     />
 
-    <CorrectGuess :correctColor="correctColor" @next-guess="nextGuess" />
+    <Guess :correctColor="correctColor" @next-guess="nextGuess" />
 
     <DarkMode />
     <GuessStreak :streak="streak" />
@@ -76,6 +76,7 @@ export default {
         } else {
           this.streak = 0;
         }
+      } else {
       }
     },
     nextGuess() {

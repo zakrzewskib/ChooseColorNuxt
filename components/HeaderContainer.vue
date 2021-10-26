@@ -19,4 +19,11 @@ export default {
     text-align: center;
   }
 }
+
+/* 500px */
+@media (max-width: 32em) {
+  /* h1 {
+    font-size: 75%;
+  } */
+}
 </style>
