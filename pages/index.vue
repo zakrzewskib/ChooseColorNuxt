@@ -4,10 +4,7 @@
 
     <History v-if="history" :guessesArray="guesses" />
 
-    <GameContainer
-      v-if="mounted && home == true"
-      @guessed-correctly="updateGuesses"
-    />
+    <GameContainer :home="home" @guessed-correctly="updateGuesses" />
   </div>
 </template>
 
@@ -23,7 +20,6 @@ export default {
 
   data() {
     return {
-      mounted: false,
       history: false,
       home: true,
 
@@ -32,7 +28,13 @@ export default {
   },
 
   mounted() {
-    this.mounted = true;
+    if (localStorage.getItem("guesses")) {
+      try {
+        this.cats = JSON.parse(localStorage.getItem("guesses"));
+      } catch (e) {
+        localStorage.removeItem("guesses");
+      }
+    }
   },
 
   methods: {
@@ -48,6 +50,12 @@ export default {
 
     updateGuesses(color) {
       this.guesses.push(color);
+      this.save();
+    },
+
+    save() {
+      const parsed = JSON.stringify(this.guesses);
+      localStorage.setItem("guesses", parsed);
     }
   }
 };

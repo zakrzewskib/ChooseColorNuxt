@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container" v-if="mounted && home == true">
     <HeaderContainer
       title="Choose correct color:"
       :colorToSelect="colorToSelect"
@@ -25,6 +25,8 @@
 
 <script>
 export default {
+  props: ["home"],
+
   data() {
     return {
       colors: [],
@@ -33,11 +35,13 @@ export default {
       streak: 0,
       clickedNextGuess: true,
       guessedColor: "",
-      guessedWrong: false
+      guessedWrong: false,
+      mounted: false
     };
   },
 
   mounted() {
+    this.mounted = true;
     this.defineNewColorsToChoose();
   },
 
