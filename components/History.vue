@@ -1,6 +1,6 @@
 <template>
-  <div class="about">
-    <h1>About</h1>
+  <div class="your-guesses">
+    <h1>User guesses</h1>
   </div>
 </template>
 
@@ -9,7 +9,7 @@ export default {};
 </script>
 
 <style scoped>
-.about {
+.your-guesses {
   text-align: center;
 }
 </style>

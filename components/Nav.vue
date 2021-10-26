@@ -1,20 +1,10 @@
 <template>
   <nav class="navbar">
-    <p
-      class="my-nuxt-link"
-      to="/"
-      :class="{ active: activeHome }"
-      @click="homeClicked"
-    >
+    <p class="my-nuxt-link" :class="{ active: active1 }" @click="firstClicked">
       Home
     </p>
-    <p
-      class="my-nuxt-link"
-      to="/about"
-      :class="{ active: activeAbout }"
-      @click="aboutClicked"
-    >
-      About
+    <p class="my-nuxt-link" :class="{ active: active2 }" @click="secondClicked">
+      History
     </p>
   </nav>
 </template>
@@ -23,27 +13,22 @@
 export default {
   data() {
     return {
-      activeHome: true,
-      activeAbout: false
+      active1: true,
+      active2: false
     };
   },
 
   methods: {
-    homeClicked() {
-      this.activeHome = true;
-      this.activeAbout = false;
-
-      console.log("home");
-
-      this.$emit("home-clicked");
+    firstClicked() {
+      this.active1 = true;
+      this.active2 = false;
+      this.$emit("first-clicked");
     },
-    aboutClicked() {
-      this.activeAbout = true;
-      this.activeHome = false;
+    secondClicked() {
+      this.active2 = true;
+      this.active1 = false;
 
-      console.log("about");
-
-      this.$emit("about-clicked");
+      this.$emit("second-clicked");
     }
   }
 };

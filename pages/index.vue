@@ -1,12 +1,8 @@
 <template>
   <div>
-    <Nav @about-clicked="changeToAbout" @home-clicked="changeToHome" />
+    <Nav @first-clicked="changeToHome" @second-clicked="changeToHistory" />
 
-    <About
-      v-if="about"
-      @change-to-about="changeToAbout"
-      @change-to-home="changeToHome"
-    />
+    <History v-if="history" />
 
     <GameContainer v-if="mounted && home == true" />
   </div>
@@ -25,7 +21,7 @@ export default {
   data() {
     return {
       mounted: false,
-      about: false,
+      history: false,
       home: true
     };
   },
@@ -35,13 +31,13 @@ export default {
   },
 
   methods: {
-    changeToAbout() {
-      this.about = true;
+    changeToHistory() {
+      this.history = true;
       this.home = false;
     },
 
     changeToHome() {
-      this.about = false;
+      this.history = false;
       this.home = true;
     }
   }
