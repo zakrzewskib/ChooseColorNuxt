@@ -23,7 +23,6 @@ export default {
   methods: {
     nextGuess() {
       this.$emit("next-guess");
-      console.log(this.guessedColor);
     }
   }
 };

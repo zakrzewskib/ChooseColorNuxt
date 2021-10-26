@@ -2,9 +2,12 @@
   <div>
     <Nav @first-clicked="changeToHome" @second-clicked="changeToHistory" />
 
-    <History v-if="history" />
+    <History v-if="history" :guessesArray="skills" />
 
-    <GameContainer v-if="mounted && home == true" />
+    <GameContainer
+      v-if="mounted && home == true"
+      @guessed-correctly="updateGuesses"
+    />
   </div>
 </template>
 
@@ -22,7 +25,9 @@ export default {
     return {
       mounted: false,
       history: false,
-      home: true
+      home: true,
+
+      skills: [1, 2, 3, 4]
     };
   },
 
@@ -39,6 +44,10 @@ export default {
     changeToHome() {
       this.history = false;
       this.home = true;
+    },
+
+    updateGuesses(color) {
+      console.log(color);
     }
   }
 };

@@ -88,6 +88,8 @@ export default {
       }
     },
     nextGuess() {
+      this.$emit("guessed-correctly", this.colorToSelect);
+
       this.defineNewColorsToChoose();
       this.correctColor = false;
       this.clickedNextGuess = true;
