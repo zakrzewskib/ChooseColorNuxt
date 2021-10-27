@@ -5,7 +5,7 @@
     <p v-if="guessesArray.length === 0">No guesses yet!</p>
 
     <ul class="history-list">
-      <li v-for="guess in guessesArray" :key="guess">
+      <li v-for="guess in guessesArray" :key="guess" class="li-guess">
         <p :style="{ color: guess }">{{ guess }}</p>
       </li>
     </ul>
@@ -23,22 +23,19 @@ export default {
   text-align: center;
 
   margin: 0 auto;
-  width: 30rem;
+  width: 40rem;
 }
 
 h1 {
   margin-bottom: 2.4rem;
 }
 
-ul {
-  list-style: none;
-}
-
 .history-list {
-  display: flex;
-  flex-direction: column;
-  gap: 2.4rem;
+  list-style: none;
 
-  text-align: left;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2.4rem;
 }
 </style>
