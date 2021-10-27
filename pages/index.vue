@@ -44,6 +44,16 @@ export default {
         localStorage.removeItem("guesses");
       }
     }
+
+    if (localStorage.theLongestStreak) {
+      this.theLongestStreak = localStorage.theLongestStreak;
+    }
+  },
+
+  watch: {
+    theLongestStreak(newStreak) {
+      localStorage.theLongestStreak = newStreak;
+    }
   },
 
   methods: {
