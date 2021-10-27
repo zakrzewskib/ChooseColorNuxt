@@ -1,6 +1,9 @@
 <template>
   <div class="your-guesses">
-    <h1>You guessed:</h1>
+    <header class="header-guesses">
+      <h2>Your longest streak: {{ theLongestStreak }}</h2>
+      <h2>You guessed:</h2>
+    </header>
 
     <p v-if="guessesArray.length === 0">No guesses yet!</p>
 
@@ -14,7 +17,7 @@
 
 <script>
 export default {
-  props: ["guessesArray"]
+  props: ["guessesArray", "theLongestStreak"]
 };
 </script>
 
@@ -23,7 +26,16 @@ export default {
   text-align: center;
 
   margin: 0 auto;
-  width: 40rem;
+  width: 50rem;
+}
+
+.header-guesses {
+  margin-bottom: 2.4rem;
+  font-size: 1.8rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
 }
 
 h1 {

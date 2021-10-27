@@ -2,9 +2,17 @@
   <div>
     <Nav @first-clicked="changeToHome" @second-clicked="changeToHistory" />
 
-    <History v-if="history" :guessesArray="guesses" />
+    <History
+      v-if="history"
+      :guessesArray="guesses"
+      :theLongestStreak="theLongestStreak"
+    />
 
-    <GameContainer :home="home" @guessed-correctly="updateGuesses" />
+    <GameContainer
+      :home="home"
+      @guessed-correctly="updateGuesses"
+      @updated-longest-streak="updateTheLongestStreak"
+    />
   </div>
 </template>
 
@@ -23,7 +31,8 @@ export default {
       history: false,
       home: true,
 
-      guesses: []
+      guesses: [],
+      theLongestStreak: 0
     };
   },
 
@@ -51,6 +60,10 @@ export default {
     updateGuesses(color) {
       this.guesses.push(color);
       this.save();
+    },
+
+    updateTheLongestStreak(streak) {
+      this.theLongestStreak = streak;
     },
 
     save() {

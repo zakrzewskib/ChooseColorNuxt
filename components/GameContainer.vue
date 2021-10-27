@@ -36,7 +36,9 @@ export default {
       clickedNextGuess: true,
       guessedColor: "",
       guessedWrong: false,
-      mounted: false
+      mounted: false,
+
+      theLongestStreak: 0
     };
   },
 
@@ -85,12 +87,20 @@ export default {
         if (this.colorToSelect === color) {
           this.correctColor = true;
           this.streak++;
+          this.updateTheLongestStreak();
           this.clickedNextGuess = false;
 
           this.$emit("guessed-correctly", this.colorToSelect);
         } else {
           this.streak = 0;
         }
+      }
+    },
+
+    updateTheLongestStreak() {
+      if (this.streak > this.theLongestStreak) {
+        this.theLongestStreak = this.streak;
+        this.$emit("updated-longest-streak", this.theLongestStreak);
       }
     },
 
