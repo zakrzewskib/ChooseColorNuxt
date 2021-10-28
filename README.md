@@ -1,5 +1,7 @@
 # ChooseColorNuxt
 
+Play the game here!: <a href="https://zakrzewskib.github.io/ChooseNuxtColor/">https://zakrzewskib.github.io/ChooseNuxtColor/</a>
+
 ## Build Setup
 
 ```bash
